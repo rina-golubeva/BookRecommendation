@@ -1,4 +1,5 @@
 def sim_pearson(prefs, p1, p2):
+    '''Return the Pearson correlation coefficient for person1 and person2.'''
     # get the list of shared items
     si = {}
     for item in prefs[p1]:
