@@ -1,4 +1,5 @@
 def calculateSimilarItems(prefs, n = 10):
+    '''Return a dictionary of items showing which other items they are most similiar to.'''
     result = {}
 
     # invert the preference matrix to be item-centric
