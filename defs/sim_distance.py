@@ -1,4 +1,5 @@
 def sim_distance(prefs, person1, person2):
+'''Return a distance-based similarity score for person1 and person2.'''
     # get the list of shared items
     si = {}
     for item in prefs[person1]:
