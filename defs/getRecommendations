@@ -1,4 +1,5 @@
 def getRecommendations(prefs, person, similarity = sim_pearson):
+    '''Get recommendations for a person by using a weighed averaged ranking.'''
     totals = {}
     simSums = {}
     for other in prefs:
