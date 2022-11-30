@@ -1,0 +1,15 @@
+def calculateSimilarItems(prefs, n = 10):
+    result = {}
+
+    # invert the preference matrix to be item-centric
+    itemPrefs = transformPrefs(prefs)
+    c = 0
+    for item in itemPrefs:
+        # status updates for large datasets
+        c += 1
+        if c%100 == 0:
+            print("%d/%d" % (c, len(itemPrefs)))
+        # find the most similar items to this one
+        scores = topMatches(itemPrefs, item, n = n, similarity=sim_distance)
+        result[item] = scores
+    return result
