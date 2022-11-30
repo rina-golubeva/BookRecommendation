@@ -1,0 +1,8 @@
+def transformPrefs(prefs):
+    results = {}
+    for person in prefs:
+        for item in prefs[person]:
+            results.setdefault(item, {})
+            # flip item and person
+            results[item][person] = prefs[person][item]
+    return results
