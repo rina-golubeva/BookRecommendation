@@ -1,4 +1,5 @@
 def transformPrefs(prefs):
+    '''Swipe the people and the item.'''
     results = {}
     for person in prefs:
         for item in prefs[person]:
