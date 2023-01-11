@@ -1,4 +1,4 @@
-def getRecommendations(prefs, person, similarity = sim_pearson):
+def getRecommendations(prefs, person, n=5, similarity = sim_pearson):
     '''Get recommendations for a person by using a weighed averaged ranking.'''
     totals = {}
     simSums = {}
@@ -24,8 +24,8 @@ def getRecommendations(prefs, person, similarity = sim_pearson):
                 simSums[item] += sim
 
     # create the normalized list
-    rankings = [(total/simSums[item], item) for item, total in totals.items()]
+    rankings = [round((total/simSums[item], 5), item) for item, total in totals.items()]
 
     # return the sorted list
     rankings.sort(reverse = True)
-    return rankings
+    return rankings[:n]
